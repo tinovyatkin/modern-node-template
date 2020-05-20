@@ -12,12 +12,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
-      redis:
-        image: redis:6
-        ports:
-          - 6379:6379
-        options: --entrypoint redis-server
+    # services:
+    #   redis:
+    #     image: redis:6
+    #     ports:
+    #       - 6379:6379
+    #     options: --entrypoint redis-server
 
     strategy:
       matrix:
