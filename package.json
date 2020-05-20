@@ -13,7 +13,8 @@
   "author": "Konstantin Vyatkin <tino@vtkn.io>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "14.0.1",
+    "@types/mocha": "7.0.2",
+    "@types/node": "14.0.4",
     "@typescript-eslint/parser": "2.34.0",
     "c8": "7.1.2",
     "eslint": "7.0.0",
