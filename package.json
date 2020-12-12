@@ -23,7 +23,7 @@
     "eslint-plugin-jsdoc": "30.2.1",
     "eslint-plugin-mocha": "7.0.1",
     "eslint-plugin-unicorn": "21.0.0",
-    "husky": "4.2.5",
+    "husky": "5.0.6",
     "lint-staged": "10.2.11",
     "prettier": "2.0.5",
     "typescript": "3.9.7"
