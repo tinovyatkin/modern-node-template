@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "showStatus": true,
+  "allowCompoundWords": true,
+  "dictionaries": ["node", "npm"],
+  "ignorePaths": [
+    ".gitattributes",
+    ".gitignore",
+    "*.config.*",
+    "**/.gitignore",
+    "**/.vscode/**",
+    "**/node_modules/**",
+    "**/coverage/**",
+    "cspell.json",
+    "package*.json",
+    "renovate.json",
+    "jsconfig.json",
+    "**/test/**"
+  ],
+  "ignoreRegExpList": ["networkidle"],
+  "words": ["codecov", "tada"],
+  "overrides": [
+    {
+      "filename": ["package.json"],
+      "words": ["byaka"]
+    }
+  ]
+}

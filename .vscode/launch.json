@@ -5,8 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
-      "runtimeVersion": "14.3.0",
+      "type": "pwa-node",
       "request": "launch",
       "name": "Mocha Tests",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
@@ -15,8 +14,7 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
-      "type": "node",
-      "runtimeVersion": "14.3.0",
+      "type": "pwa-node",
       "request": "launch",
       "name": "Launch current file",
       "skipFiles": ["<node_internals>/**"],

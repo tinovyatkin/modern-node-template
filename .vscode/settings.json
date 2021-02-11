@@ -1,5 +1,12 @@
 {
-  "eslint.enable": true,
+  "editor.rulers": [80],
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
   // prevent watch task failures on lint errors
   "eslint.validate": ["javascript"],
   "editor.codeActionsOnSave": {
@@ -20,16 +27,25 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "search.exclude": {
-    "**/node_modules": true
+  "[dotenv]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
   },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/coverage": true
+  },
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "js/ts.implicitProjectConfig.checkJs": true,
   // for Windows collaborators
   "files.eol": "\n",
   "files.encoding": "utf8",
   // associations for some files this project is using
   "files.associations": {
     ".huskyrc": "jsonc",
-    ".npmrc": "ini"
+    ".npmrc": "ini",
+    ".env": "dotenv"
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -47,7 +63,6 @@
   "npm.autoDetect": "on",
   "npm.packageManager": "npm",
   "npm.fetchOnlinePackageInfo": true,
-  "npm.enableScriptExplorer": true,
   "json.schemas": [
     // Husky config file
     {
@@ -58,7 +73,15 @@
     {
       "fileMatch": [".prettierrc.json"],
       "url": "http://json.schemastore.org/prettierrc"
+    },
+    {
+      "fileMatch": ["schemas/**.json"],
+      "url": "http://json-schema.org/draft-04/schema"
     }
   ],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.enabled": true,
+  "mochaExplorer.files": "test/**/*.test.js",
+  "mochaExplorer.timeout": 999999,
+  "mochaExplorer.exit": true
 }
