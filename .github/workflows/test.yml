@@ -38,7 +38,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npx c8 --reporter=lcov mocha
+      - run: npm test
 
       - uses: codecov/codecov-action@v1
         with:
