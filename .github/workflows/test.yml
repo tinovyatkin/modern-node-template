@@ -1,17 +1,20 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: CI
 
 on:
   push:
     branches: [master]
+
   pull_request:
     branches: [master]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-20.04
+    env:
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+      MONGOMS_DISABLE_POSTINSTALL: 1
+      HUSKY_SKIP_INSTALL: true
+      FORCE_COLOR: 2
     # services:
     #   redis:
     #     image: redis:6
@@ -21,14 +24,22 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [14]
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+
       - run: npm ci
-      - run: npx c8 --reporter=lcov mocha
+
+      - run: npm test
+
       - uses: codecov/codecov-action@v1
+        with:
+          files: coverage/coverage-final.json

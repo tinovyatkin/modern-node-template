@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - "**.js"
+      - "**eslint**"
+      - "cspell.json"
+      - "yarn.lock"
+      - ".github/workflows/lint.yml"
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    env:
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+      MONGOMS_DISABLE_POSTINSTALL: 1
+      HUSKY_SKIP_INSTALL: true
+      FORCE_COLOR: 2
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # run to add problem matcher
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ">=14.15"
+
+      - run: npm ci
+
+      - run: npx tsc --noEmit -p jsconfig.json
+
+      - run: npm run lint
+
+      - run: npm run check:spelling
