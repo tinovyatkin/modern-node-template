@@ -10,6 +10,8 @@
     "github.vscode-pull-request-github",
     "aaron-bond.better-comments",
     "streetsidesoftware.code-spell-checker",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "stoplight.spectral",
+    "foxundermoon.shell-format"
   ]
 }
