@@ -16,9 +16,15 @@
     "plugin:unicorn/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:node/recommended"
+    "plugin:node/recommended",
+    "plugin:radar/recommended"
   ],
-  "plugins": ["optimize-regex", "sort-destructure-keys", "unicorn"],
+  "plugins": [
+    "optimize-regex",
+    "sort-destructure-keys",
+    "unicorn",
+    "typescript-eslint"
+  ],
   "rules": {
     "no-empty": [
       "error",
@@ -119,6 +125,22 @@
     ],
     "import/newline-after-import": ["error", { "count": 1 }],
 
+    // typescript-eslint - https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
+    "@typescript-eslint/no-base-to-string": "error",
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        "allowDestructuring": true // Allow `const { props, state } = this`; false by default
+      }
+    ],
+    "@typescript-eslint/prefer-for-of": "error",
+    "@typescript-eslint/prefer-includes": "error",
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-string-starts-ends-with": "error",
+    "@typescript-eslint/no-magic-numbers": "warn",
+    "@typescript-eslint/no-useless-constructor": "error",
+
     // we will check that via eslint-plugin-import
     "node/no-unpublished-import": "off",
     "node/no-extraneous-import": "off",
@@ -170,7 +192,11 @@
         "max-lines": "off",
         "prefer-arrow-callback": "off"
       },
-      "extends": ["plugin:mocha/recommended"]
+      "extends": [
+        "plugin:mocha/recommended",
+        "plugin:chai-expect/recommended",
+        "plugin:@fintechstudios/chai-as-promised/recommended"
+      ]
     }
   ],
   "settings": {
