@@ -28,7 +28,7 @@
     "chai-as-promised": "7.1.1",
     "cspell": "5.2.4",
     "eslint": "7.20.0",
-    "eslint-config-prettier": "7.2.0",
+    "eslint-config-prettier": "8.0.0",
     "eslint-plugin-chai-expect": "2.2.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "32.1.0",
