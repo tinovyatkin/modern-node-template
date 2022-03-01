@@ -18,7 +18,7 @@ jobs:
       FORCE_COLOR: 2
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # run to add problem matcher
       - uses: actions/setup-node@v3
